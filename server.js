@@ -14,9 +14,17 @@ var fs = require('fs');
 var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var app = express();
 
-var COMMENTS_FILE = path.join(__dirname, 'comments.json');
+// var COMMENTS_FILE = path.join(__dirname, 'comments.json');
+
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  "mongodb://localhost/react-comment-tutorial-app");
+
+var Comment = require('./models/comment');
 
 app.set('port', (process.env.PORT || 3000));
 
