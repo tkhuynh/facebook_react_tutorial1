@@ -6,7 +6,7 @@
   "description": "Code from the React tutorial.",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.4.3",
+    "body-parser": "^1.15.2",
     "express": "^4.4.5",
     "mongoose": "^4.5.5"
   },
